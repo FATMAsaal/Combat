@@ -1,0 +1,23 @@
+strategy SONIQUE
+
+choose weapon MANDOLINE_SONIQUE
+choose protection CASQUE_EGOUTTOIR
+choose care COMPOST_PROTONIQUE
+
+add action 20
+
+if life < 40%
+    use protection
+endif
+if life <= 10
+    use care
+    if enemyLife > 5
+        end
+    endif
+endif
+if enemyInScope
+    use weapon 2
+    move backward 3
+else
+    move forward 2
+endif
